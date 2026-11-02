@@ -1,0 +1,23 @@
+[auth.email.template.confirmation]
+subject = "Confirm your email — Augmented Cooking"
+content_path = "./supabase/templates/auth-emails/confirmation.html"
+
+[auth.email.template.magic_link]
+subject = "Your sign-in code — Augmented Cooking"
+content_path = "./supabase/templates/auth-emails/magic-link.html"
+
+[auth.email.template.recovery]
+subject = "Reset your password — Augmented Cooking"
+content_path = "./supabase/templates/auth-emails/recovery.html"
+
+[auth.email.template.invite]
+subject = "You're invited to Augmented Cooking"
+content_path = "./supabase/templates/auth-emails/invitation.html"
+
+[auth.email.template.email_change]
+subject = "Confirm your new email — Augmented Cooking"
+content_path = "./supabase/templates/auth-emails/email-change.html"
+
+[auth.email.template.reauthentication]
+subject = "Confirm it's really you — Augmented Cooking"
+content_path = "./supabase/templates/auth-emails/reauthentication.html"

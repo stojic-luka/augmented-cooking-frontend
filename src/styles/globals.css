@@ -1,0 +1,395 @@
+/* ============================================================================
+   Meridian design tokens + Mantine overrides — single source of design truth.
+   Raw color values are allowed ONLY in this file (and the Mantine theme).
+   Loaded in main.tsx AFTER @mantine/core/styles.css so every override wins.
+   ========================================================================= */
+
+/* 1 — Meridian tokens: LIGHT (default) */
+:root,
+[data-mantine-color-scheme='light'] {
+  color-scheme: light;
+
+  /* Typography */
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --font-mono:
+    ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  /* Surfaces */
+  --bg: #ffffff;
+  --bg-subtle: #f7f7f8;
+  --surface: #ffffff;
+  --surface-hover: #f4f4f6;
+  --surface-raised: #ffffff;
+  --input-bg: #ffffff;
+  --scrim: rgba(15, 17, 21, 0.55);
+
+  /* Borders */
+  --border: #e9e9ec;
+  --border-strong: #d5d6db;
+
+  /* Text */
+  --text: #1a1c23;
+  --text-secondary: #5d6470;
+  --text-tertiary: #8c919c;
+
+  /* Accent */
+  --accent: #5e6ad2;
+  --accent-hover: #4d59c9;
+  --accent-subtle: rgba(94, 106, 210, 0.1);
+  --accent-text: #4d59c9;
+  --on-accent: #ffffff;
+  --accent-border: rgba(94, 106, 210, 0.22);
+
+  /* Status */
+  --success: #2e9964;
+  --success-subtle: rgba(46, 153, 100, 0.11);
+  --success-text: #1c7a4d;
+  --success-border: rgba(46, 153, 100, 0.22);
+  --warning: #ec9a2c;
+  --warning-subtle: rgba(236, 154, 44, 0.13);
+  --warning-text: #9a6708;
+  --warning-border: rgba(236, 154, 44, 0.28);
+  --danger: #e5484d;
+  --danger-hover: #d93c42;
+  --danger-subtle: rgba(229, 72, 77, 0.1);
+  --danger-text: #cf222e;
+  --danger-border: rgba(229, 72, 77, 0.22);
+
+  /* Extra categorical hue */
+  --pink-subtle: rgba(219, 64, 124, 0.1);
+  --pink-text: #c2427c;
+  --pink-border: rgba(219, 64, 124, 0.22);
+
+  /* Focus rings */
+  --ring: rgba(94, 106, 210, 0.4);
+  --ring-danger: rgba(229, 72, 77, 0.4);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(16, 17, 24, 0.05);
+  --shadow-sm: 0 1px 2px rgba(16, 17, 24, 0.04), 0 2px 8px rgba(16, 17, 24, 0.05);
+  --shadow-md: 0 2px 4px rgba(16, 17, 24, 0.05), 0 8px 24px rgba(16, 17, 24, 0.09);
+  --shadow-lg: 0 4px 8px rgba(16, 17, 24, 0.06), 0 16px 48px rgba(16, 17, 24, 0.14);
+
+  /* Misc */
+  --tooltip-bg: #26282f;
+  --tooltip-text: #f5f6f7;
+  --nav-bg: rgba(255, 255, 255, 0.72);
+  --tab-active-bg: #ffffff;
+  --glow: rgba(94, 106, 210, 0.08);
+}
+
+/* 2 — Meridian tokens: DARK (keep this block AFTER the light block) */
+[data-mantine-color-scheme='dark'] {
+  color-scheme: dark;
+
+  --bg: #08090b;
+  --bg-subtle: #0e1013;
+  --surface: #101216;
+  --surface-hover: #1a1d23;
+  --surface-raised: #171a20;
+  --input-bg: #0c0e11;
+  --scrim: rgba(0, 0, 0, 0.66);
+
+  --border: #22252c;
+  --border-strong: #343841;
+
+  --text: #f2f3f5;
+  --text-secondary: #a9b0ba;
+  --text-tertiary: #6f7682;
+
+  --accent: #5e6ad2;
+  --accent-hover: #6e7ad8;
+  --accent-subtle: rgba(94, 106, 210, 0.2);
+  --accent-text: #98a1ea;
+  --on-accent: #ffffff;
+  --accent-border: rgba(94, 106, 210, 0.35);
+
+  --success: #46b58a;
+  --success-subtle: rgba(70, 181, 138, 0.15);
+  --success-text: #52c492;
+  --success-border: rgba(70, 181, 138, 0.35);
+  --warning: #ffb224;
+  --warning-subtle: rgba(255, 178, 36, 0.14);
+  --warning-text: #ffb224;
+  --warning-border: rgba(255, 178, 36, 0.32);
+  --danger: #e5484d;
+  --danger-hover: #ff5d63;
+  --danger-subtle: rgba(229, 72, 77, 0.16);
+  --danger-text: #ff7075;
+  --danger-border: rgba(229, 72, 77, 0.35);
+
+  --pink-subtle: rgba(240, 101, 164, 0.16);
+  --pink-text: #f583ab;
+  --pink-border: rgba(240, 101, 164, 0.35);
+
+  --ring: rgba(94, 106, 210, 0.55);
+  --ring-danger: rgba(229, 72, 77, 0.5);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.45), 0 16px 48px rgba(0, 0, 0, 0.55);
+
+  --tooltip-bg: #2b2e36;
+  --tooltip-text: #f2f3f5;
+  --nav-bg: rgba(8, 9, 11, 0.72);
+  --tab-active-bg: #202329;
+  --glow: rgba(94, 106, 210, 0.1);
+}
+
+/* 3 — Mantine semantic variable overrides: LIGHT.
+   Mantine derives variant colors (filled/light/outline) from these; pinning
+   them makes every component land exactly on the Meridian tokens. */
+:root,
+[data-mantine-color-scheme='light'] {
+  --mantine-color-body: var(--bg);
+  --mantine-color-text: var(--text);
+  --mantine-color-dimmed: var(--text-secondary);
+  --mantine-color-anchor: var(--accent-text);
+  --mantine-color-error: var(--danger-text);
+  --mantine-color-success: var(--success-text);
+  --mantine-color-placeholder: var(--text-tertiary);
+  --mantine-color-disabled: var(--bg-subtle);
+  --mantine-color-disabled-color: var(--text-tertiary);
+  --mantine-color-disabled-border: var(--border);
+
+  /* `variant="default"` (secondary controls) */
+  --mantine-color-default: var(--surface);
+  --mantine-color-default-color: var(--text);
+  --mantine-color-default-border: var(--border);
+  --mantine-color-default-hover: var(--surface-hover);
+
+  /* brand = primary accent */
+  --mantine-color-brand-filled: var(--accent);
+  --mantine-color-brand-filled-hover: var(--accent-hover);
+  --mantine-color-brand-light: var(--accent-subtle);
+  --mantine-color-brand-light-hover: rgba(94, 106, 210, 0.16);
+  --mantine-color-brand-light-color: var(--accent-text);
+  --mantine-color-brand-outline: var(--accent);
+  --mantine-color-brand-outline-hover: rgba(94, 106, 210, 0.06);
+  --mantine-color-brand-text: var(--accent-text);
+
+  /* status hues */
+  --mantine-color-green-filled: var(--success);
+  --mantine-color-green-filled-hover: #267c50;
+  --mantine-color-green-light: var(--success-subtle);
+  --mantine-color-green-light-hover: rgba(46, 153, 100, 0.17);
+  --mantine-color-green-light-color: var(--success-text);
+  --mantine-color-green-outline: var(--success);
+  --mantine-color-green-text: var(--success-text);
+
+  --mantine-color-yellow-filled: var(--warning);
+  --mantine-color-yellow-filled-hover: #cd8a1f;
+  --mantine-color-yellow-light: var(--warning-subtle);
+  --mantine-color-yellow-light-hover: rgba(236, 154, 44, 0.19);
+  --mantine-color-yellow-light-color: var(--warning-text);
+  --mantine-color-yellow-outline: var(--warning);
+  --mantine-color-yellow-text: var(--warning-text);
+
+  --mantine-color-red-filled: var(--danger);
+  --mantine-color-red-filled-hover: var(--danger-hover);
+  --mantine-color-red-light: var(--danger-subtle);
+  --mantine-color-red-light-hover: rgba(229, 72, 77, 0.15);
+  --mantine-color-red-light-color: var(--danger-text);
+  --mantine-color-red-outline: var(--danger);
+  --mantine-color-red-text: var(--danger-text);
+
+  --mantine-color-pink-filled: #d64d8a;
+  --mantine-color-pink-filled-hover: #c2427c;
+  --mantine-color-pink-light: var(--pink-subtle);
+  --mantine-color-pink-light-hover: rgba(219, 64, 124, 0.15);
+  --mantine-color-pink-light-color: var(--pink-text);
+  --mantine-color-pink-outline: var(--pink-text);
+  --mantine-color-pink-text: var(--pink-text);
+}
+
+/* 4 — Mantine semantic variable overrides: DARK */
+[data-mantine-color-scheme='dark'] {
+  --mantine-color-body: var(--bg);
+  --mantine-color-text: var(--text);
+  --mantine-color-dimmed: var(--text-secondary);
+  --mantine-color-anchor: var(--accent-text);
+  --mantine-color-error: var(--danger-text);
+  --mantine-color-success: var(--success-text);
+  --mantine-color-placeholder: var(--text-tertiary);
+  --mantine-color-disabled: var(--surface);
+  --mantine-color-disabled-color: var(--text-tertiary);
+  --mantine-color-disabled-border: var(--border-strong);
+
+  --mantine-color-default: var(--surface);
+  --mantine-color-default-color: var(--text);
+  --mantine-color-default-border: var(--border);
+  --mantine-color-default-hover: var(--surface-hover);
+
+  --mantine-color-brand-filled: var(--accent);
+  --mantine-color-brand-filled-hover: var(--accent-hover);
+  --mantine-color-brand-light: var(--accent-subtle);
+  --mantine-color-brand-light-hover: rgba(94, 106, 210, 0.28);
+  --mantine-color-brand-light-color: var(--accent-text);
+  --mantine-color-brand-outline: var(--accent);
+  --mantine-color-brand-outline-hover: rgba(94, 106, 210, 0.12);
+  --mantine-color-brand-text: var(--accent-text);
+
+  --mantine-color-green-filled: var(--success);
+  --mantine-color-green-filled-hover: var(--success-text);
+  --mantine-color-green-light: var(--success-subtle);
+  --mantine-color-green-light-hover: rgba(70, 181, 138, 0.21);
+  --mantine-color-green-light-color: var(--success-text);
+  --mantine-color-green-outline: var(--success);
+  --mantine-color-green-text: var(--success-text);
+
+  --mantine-color-yellow-filled: var(--warning);
+  --mantine-color-yellow-filled-hover: #ffc53d;
+  --mantine-color-yellow-light: var(--warning-subtle);
+  --mantine-color-yellow-light-hover: rgba(255, 178, 36, 0.2);
+  --mantine-color-yellow-light-color: var(--warning-text);
+  --mantine-color-yellow-outline: var(--warning);
+  --mantine-color-yellow-text: var(--warning-text);
+
+  --mantine-color-red-filled: var(--danger);
+  --mantine-color-red-filled-hover: var(--danger-hover);
+  --mantine-color-red-light: var(--danger-subtle);
+  --mantine-color-red-light-hover: rgba(229, 72, 77, 0.22);
+  --mantine-color-red-light-color: var(--danger-text);
+  --mantine-color-red-outline: var(--danger);
+  --mantine-color-red-text: var(--danger-text);
+
+  --mantine-color-pink-filled: #f065a4;
+  --mantine-color-pink-filled-hover: #f583ab;
+  --mantine-color-pink-light: var(--pink-subtle);
+  --mantine-color-pink-light-hover: rgba(240, 101, 164, 0.22);
+  --mantine-color-pink-light-color: var(--pink-text);
+  --mantine-color-pink-outline: var(--pink-text);
+  --mantine-color-pink-text: var(--pink-text);
+
+  /* Mantine ships one static shadow set — light shadows are invisible on dark. */
+  --mantine-shadow-xs: var(--shadow-xs);
+  --mantine-shadow-sm: var(--shadow-sm);
+  --mantine-shadow-md: var(--shadow-md);
+  --mantine-shadow-lg: var(--shadow-lg);
+  --mantine-shadow-xl: var(--shadow-lg);
+}
+
+/* 5 — Switch track (Meridian 34×20 with hairline border).
+   The checked state flows through the `--switch-bg` variable set by a
+   higher-specificity sibling selector, so the off-state colors must be set on
+   the same variables here — a static background would shadow the checked
+   state. Class names are Mantine 9.6 Styles-API hashes; they are stable for
+   the installed version. */
+[data-mantine-color-scheme='light'] .m_9307d992 {
+  --switch-bg: var(--bg-subtle);
+}
+[data-mantine-color-scheme='dark'] .m_9307d992 {
+  --switch-bg: var(--surface);
+}
+.m_9307d992 {
+  border: 1px solid var(--border-strong);
+}
+.m_926b4011:checked + .m_9307d992 {
+  border-color: var(--accent);
+}
+
+/* 6 — Base */
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#app {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: radial-gradient(640px 320px at 50% -80px, var(--glow), transparent 70%);
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* thin, quiet scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border: 3px solid var(--bg);
+  border-radius: 999px;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* 7 — Utilities.
+   Stack.align only accepts a single CSS value — these utilities give it
+   breakpoint-aware alignment (Mantine breakpoints: sm=36em, md=48em). */
+.align-center-md-start {
+  align-items: center;
+}
+
+@media (min-width: 48em) {
+  .align-center-md-start {
+    align-items: flex-start;
+  }
+}
+
+.align-center-sm-start {
+  align-items: center;
+}
+
+@media (min-width: 36em) {
+  .align-center-sm-start {
+    align-items: flex-start;
+  }
+}
+
+/* Hover lift for clickable tiles (Meridian motion: 150ms ease, 2px rise). */
+.hover-lift {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
