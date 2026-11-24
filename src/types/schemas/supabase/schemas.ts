@@ -4,186 +4,154 @@
  * ==========================================
  */
 
-import { z } from "zod";
+import { z } from 'zod';
 
 export const publicAiActionTypeSchema = z.union([
-  z.literal("generate_recipe"),
-  z.literal("edit_recipe"),
-  z.literal("nutrition_analysis"),
-  z.literal("substitute_ingredient"),
-  z.literal("recommend"),
-  z.literal("chat"),
+  z.literal('generate_recipe'),
+  z.literal('edit_recipe'),
+  z.literal('import_recipe'),
+  z.literal('nutrition_analysis'),
+  z.literal('substitute_ingredient'),
+  z.literal('recommend'),
+  z.literal('chat'),
 ]);
 
-export const publicAiModelTierSchema = z.union([
-  z.literal("economy"),
-  z.literal("advanced"),
-]);
+export const publicAiModelTierSchema = z.union([z.literal('economy'), z.literal('advanced')]);
 
-export const publicAppRoleSchema = z.union([
-  z.literal("user"),
-  z.literal("moderator"),
-  z.literal("admin"),
-]);
+export const publicAppRoleSchema = z.union([z.literal('user'), z.literal('moderator'), z.literal('admin')]);
 
 export const publicCookingMethodSchema = z.union([
-  z.literal("baked"),
-  z.literal("roasted"),
-  z.literal("grilled"),
-  z.literal("fried"),
-  z.literal("deep_fried"),
-  z.literal("steamed"),
-  z.literal("boiled"),
-  z.literal("braised"),
-  z.literal("sauteed"),
-  z.literal("stir_fried"),
-  z.literal("pressure_cooked"),
-  z.literal("slow_cooked"),
-  z.literal("raw"),
-  z.literal("other"),
+  z.literal('baked'),
+  z.literal('roasted'),
+  z.literal('grilled'),
+  z.literal('fried'),
+  z.literal('deep_fried'),
+  z.literal('steamed'),
+  z.literal('boiled'),
+  z.literal('braised'),
+  z.literal('sauteed'),
+  z.literal('stir_fried'),
+  z.literal('pressure_cooked'),
+  z.literal('slow_cooked'),
+  z.literal('raw'),
+  z.literal('other'),
 ]);
 
 export const publicDietaryTagSchema = z.union([
-  z.literal("vegetarian"),
-  z.literal("vegan"),
-  z.literal("pescatarian"),
-  z.literal("gluten_free"),
-  z.literal("dairy_free"),
-  z.literal("nut_free"),
-  z.literal("egg_free"),
-  z.literal("halal"),
-  z.literal("kosher"),
-  z.literal("low_carb"),
-  z.literal("keto"),
-  z.literal("paleo"),
-  z.literal("sugar_free"),
-  z.literal("other"),
+  z.literal('vegetarian'),
+  z.literal('vegan'),
+  z.literal('pescatarian'),
+  z.literal('gluten_free'),
+  z.literal('dairy_free'),
+  z.literal('nut_free'),
+  z.literal('egg_free'),
+  z.literal('halal'),
+  z.literal('kosher'),
+  z.literal('low_carb'),
+  z.literal('keto'),
+  z.literal('paleo'),
+  z.literal('sugar_free'),
+  z.literal('other'),
 ]);
 
-export const publicDifficultySchema = z.union([
-  z.literal("easy"),
-  z.literal("medium"),
-  z.literal("hard"),
-]);
+export const publicDifficultySchema = z.union([z.literal('easy'), z.literal('medium'), z.literal('hard')]);
 
 export const publicFoodCategorySchema = z.union([
-  z.literal("produce"),
-  z.literal("dairy"),
-  z.literal("meat"),
-  z.literal("seafood"),
-  z.literal("grains"),
-  z.literal("pantry"),
-  z.literal("spices"),
-  z.literal("frozen"),
-  z.literal("bakery"),
-  z.literal("beverages"),
-  z.literal("other"),
+  z.literal('produce'),
+  z.literal('dairy'),
+  z.literal('meat'),
+  z.literal('seafood'),
+  z.literal('grains'),
+  z.literal('pantry'),
+  z.literal('spices'),
+  z.literal('frozen'),
+  z.literal('bakery'),
+  z.literal('beverages'),
+  z.literal('other'),
 ]);
 
 export const publicModerationStatusSchema = z.union([
-  z.literal("pending"),
-  z.literal("approved"),
-  z.literal("flagged"),
-  z.literal("rejected"),
+  z.literal('pending'),
+  z.literal('approved'),
+  z.literal('flagged'),
+  z.literal('rejected'),
 ]);
 
 export const publicNutritionSourceSchema = z.union([
-  z.literal("usda"),
-  z.literal("ai_estimated"),
-  z.literal("user_provided"),
-  z.literal("imported"),
+  z.literal('usda'),
+  z.literal('ai_estimated'),
+  z.literal('user_provided'),
+  z.literal('imported'),
 ]);
 
 export const publicOrderStatusSchema = z.union([
-  z.literal("draft"),
-  z.literal("placed"),
-  z.literal("confirmed"),
-  z.literal("delivered"),
-  z.literal("canceled"),
+  z.literal('draft'),
+  z.literal('placed'),
+  z.literal('confirmed'),
+  z.literal('delivered'),
+  z.literal('canceled'),
 ]);
 
 export const publicRecipeCategorySchema = z.union([
-  z.literal("appetizer"),
-  z.literal("soup"),
-  z.literal("salad"),
-  z.literal("main_course"),
-  z.literal("side_dish"),
-  z.literal("dessert"),
-  z.literal("breakfast"),
-  z.literal("snack"),
-  z.literal("beverage"),
-  z.literal("sauce"),
-  z.literal("other"),
+  z.literal('appetizer'),
+  z.literal('soup'),
+  z.literal('salad'),
+  z.literal('main_course'),
+  z.literal('side_dish'),
+  z.literal('dessert'),
+  z.literal('breakfast'),
+  z.literal('snack'),
+  z.literal('beverage'),
+  z.literal('sauce'),
+  z.literal('other'),
 ]);
 
-export const publicRecipeOriginSchema = z.union([
-  z.literal("manual"),
-  z.literal("scraped"),
-  z.literal("ai_generated"),
-]);
+export const publicRecipeOriginSchema = z.union([z.literal('manual'), z.literal('scraped'), z.literal('ai_generated')]);
 
 export const publicReportStatusSchema = z.union([
-  z.literal("open"),
-  z.literal("reviewed"),
-  z.literal("actioned"),
-  z.literal("dismissed"),
+  z.literal('open'),
+  z.literal('reviewed'),
+  z.literal('actioned'),
+  z.literal('dismissed'),
 ]);
 
-export const publicSeveritySchema = z.union([
-  z.literal("low"),
-  z.literal("medium"),
-  z.literal("high"),
-]);
+export const publicSeveritySchema = z.union([z.literal('low'), z.literal('medium'), z.literal('high')]);
 
 export const publicSpiceLevelSchema = z.union([
-  z.literal("mild"),
-  z.literal("medium"),
-  z.literal("hot"),
-  z.literal("very_hot"),
+  z.literal('mild'),
+  z.literal('medium'),
+  z.literal('hot'),
+  z.literal('very_hot'),
 ]);
 
 export const publicSubscriptionStatusSchema = z.union([
-  z.literal("active"),
-  z.literal("canceled"),
-  z.literal("past_due"),
-  z.literal("expired"),
+  z.literal('active'),
+  z.literal('canceled'),
+  z.literal('past_due'),
+  z.literal('expired'),
 ]);
 
-export const publicSubscriptionTierSchema = z.union([
-  z.literal("free"),
-  z.literal("premium"),
-]);
+export const publicSubscriptionTierSchema = z.union([z.literal('free'), z.literal('premium')]);
 
-export const publicSupportStatusSchema = z.union([
-  z.literal("open"),
-  z.literal("in_progress"),
-  z.literal("resolved"),
-]);
+export const publicSupportStatusSchema = z.union([z.literal('open'), z.literal('in_progress'), z.literal('resolved')]);
 
 export const publicTicketCategorySchema = z.union([
-  z.literal("bug"),
-  z.literal("recipe"),
-  z.literal("billing"),
-  z.literal("feature"),
+  z.literal('bug'),
+  z.literal('recipe'),
+  z.literal('billing'),
+  z.literal('feature'),
 ]);
 
 export const publicTokenTransactionTypeSchema = z.union([
-  z.literal("monthly_grant"),
-  z.literal("purchase"),
-  z.literal("consumption"),
-  z.literal("expiry"),
+  z.literal('monthly_grant'),
+  z.literal('purchase'),
+  z.literal('consumption'),
+  z.literal('expiry'),
 ]);
 
-export const publicUnitDimensionSchema = z.union([
-  z.literal("mass"),
-  z.literal("volume"),
-  z.literal("count"),
-]);
+export const publicUnitDimensionSchema = z.union([z.literal('mass'), z.literal('volume'), z.literal('count')]);
 
-export const publicUnitPreferenceSchema = z.union([
-  z.literal("metric"),
-  z.literal("imperial"),
-]);
+export const publicUnitPreferenceSchema = z.union([z.literal('metric'), z.literal('imperial')]);
 
 // Type annotation breaks the self-referential inference cycle (TS7022) that
 // supazod emits for recursive json columns.
@@ -200,10 +168,10 @@ export const jsonSchema: z.ZodType<unknown> = z.lazy(() =>
 );
 
 export const publicMealTypeSchema = z.union([
-  z.literal("breakfast"),
-  z.literal("lunch"),
-  z.literal("dinner"),
-  z.literal("snack"),
+  z.literal('breakfast'),
+  z.literal('lunch'),
+  z.literal('dinner'),
+  z.literal('snack'),
 ]);
 
 export const publicAiModelsRowSchema = z.object({
@@ -268,25 +236,25 @@ export const publicAiUsageLogUpdateSchema = z.object({
 
 export const publicAiUsageLogRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("ai_usage_log_model_id_fkey"),
-    columns: z.tuple([z.literal("model_id")]),
+    foreignKeyName: z.literal('ai_usage_log_model_id_fkey'),
+    columns: z.tuple([z.literal('model_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("ai_models"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('ai_models'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("ai_usage_log_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('ai_usage_log_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("ai_usage_log_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('ai_usage_log_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -307,18 +275,18 @@ export const publicCollectionRecipesUpdateSchema = z.object({
 
 export const publicCollectionRecipesRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("collection_recipes_collection_id_fkey"),
-    columns: z.tuple([z.literal("collection_id")]),
+    foreignKeyName: z.literal('collection_recipes_collection_id_fkey'),
+    columns: z.tuple([z.literal('collection_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("collections"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('collections'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("collection_recipes_recipe_id_fkey"),
-    columns: z.tuple([z.literal("recipe_id")]),
+    foreignKeyName: z.literal('collection_recipes_recipe_id_fkey'),
+    columns: z.tuple([z.literal('recipe_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("recipes"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('recipes'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -351,18 +319,18 @@ export const publicCollectionsUpdateSchema = z.object({
 
 export const publicCollectionsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("collections_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('collections_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("collections_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('collections_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -413,25 +381,25 @@ export const publicFavoritesUpdateSchema = z.object({
 
 export const publicFavoritesRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("favorites_recipe_id_fkey"),
-    columns: z.tuple([z.literal("recipe_id")]),
+    foreignKeyName: z.literal('favorites_recipe_id_fkey'),
+    columns: z.tuple([z.literal('recipe_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("recipes"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('recipes'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("favorites_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('favorites_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("favorites_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('favorites_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -500,18 +468,18 @@ export const publicOrderReceiptsUpdateSchema = z.object({
 
 export const publicOrderReceiptsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("order_receipts_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('order_receipts_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("order_receipts_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('order_receipts_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -559,11 +527,11 @@ export const publicProfilesUpdateSchema = z.object({
 
 export const publicProfilesRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("profiles_ai_model_id_fkey"),
-    columns: z.tuple([z.literal("ai_model_id")]),
+    foreignKeyName: z.literal('profiles_ai_model_id_fkey'),
+    columns: z.tuple([z.literal('ai_model_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("ai_models"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('ai_models'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -605,25 +573,25 @@ export const publicRecipeIngredientsUpdateSchema = z.object({
 
 export const publicRecipeIngredientsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("recipe_ingredients_ingredient_id_fkey"),
-    columns: z.tuple([z.literal("ingredient_id")]),
+    foreignKeyName: z.literal('recipe_ingredients_ingredient_id_fkey'),
+    columns: z.tuple([z.literal('ingredient_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("ingredients"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('ingredients'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("recipe_ingredients_recipe_id_fkey"),
-    columns: z.tuple([z.literal("recipe_id")]),
+    foreignKeyName: z.literal('recipe_ingredients_recipe_id_fkey'),
+    columns: z.tuple([z.literal('recipe_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("recipes"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('recipes'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("recipe_ingredients_unit_fkey"),
-    columns: z.tuple([z.literal("unit")]),
+    foreignKeyName: z.literal('recipe_ingredients_unit_fkey'),
+    columns: z.tuple([z.literal('unit')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("units"),
-    referencedColumns: z.tuple([z.literal("code")]),
+    referencedRelation: z.literal('units'),
+    referencedColumns: z.tuple([z.literal('code')]),
   }),
 ]);
 
@@ -668,11 +636,11 @@ export const publicRecipeNutritionUpdateSchema = z.object({
 
 export const publicRecipeNutritionRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("recipe_nutrition_recipe_id_fkey"),
-    columns: z.tuple([z.literal("recipe_id")]),
+    foreignKeyName: z.literal('recipe_nutrition_recipe_id_fkey'),
+    columns: z.tuple([z.literal('recipe_id')]),
     isOneToOne: z.literal(true),
-    referencedRelation: z.literal("recipes"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('recipes'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -708,25 +676,25 @@ export const publicRecipeRevisionsUpdateSchema = z.object({
 
 export const publicRecipeRevisionsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("recipe_revisions_author_id_fkey"),
-    columns: z.tuple([z.literal("author_id")]),
+    foreignKeyName: z.literal('recipe_revisions_author_id_fkey'),
+    columns: z.tuple([z.literal('author_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("recipe_revisions_author_id_fkey"),
-    columns: z.tuple([z.literal("author_id")]),
+    foreignKeyName: z.literal('recipe_revisions_author_id_fkey'),
+    columns: z.tuple([z.literal('author_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("recipe_revisions_recipe_id_fkey"),
-    columns: z.tuple([z.literal("recipe_id")]),
+    foreignKeyName: z.literal('recipe_revisions_recipe_id_fkey'),
+    columns: z.tuple([z.literal('recipe_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("recipes"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('recipes'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -759,11 +727,11 @@ export const publicRecipeStepsUpdateSchema = z.object({
 
 export const publicRecipeStepsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("recipe_steps_recipe_id_fkey"),
-    columns: z.tuple([z.literal("recipe_id")]),
+    foreignKeyName: z.literal('recipe_steps_recipe_id_fkey'),
+    columns: z.tuple([z.literal('recipe_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("recipes"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('recipes'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -847,32 +815,32 @@ export const publicRecipesUpdateSchema = z.object({
 
 export const publicRecipesRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("recipes_cuisine_id_fkey"),
-    columns: z.tuple([z.literal("cuisine_id")]),
+    foreignKeyName: z.literal('recipes_cuisine_id_fkey'),
+    columns: z.tuple([z.literal('cuisine_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("cuisines"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('cuisines'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("recipes_original_recipe_id_fkey"),
-    columns: z.tuple([z.literal("original_recipe_id")]),
+    foreignKeyName: z.literal('recipes_original_recipe_id_fkey'),
+    columns: z.tuple([z.literal('original_recipe_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("recipes"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('recipes'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("recipes_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('recipes_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("recipes_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('recipes_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -908,32 +876,32 @@ export const publicReportsUpdateSchema = z.object({
 
 export const publicReportsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("reports_recipe_id_fkey"),
-    columns: z.tuple([z.literal("recipe_id")]),
+    foreignKeyName: z.literal('reports_recipe_id_fkey'),
+    columns: z.tuple([z.literal('recipe_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("recipes"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('recipes'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("reports_reporter_id_fkey"),
-    columns: z.tuple([z.literal("reporter_id")]),
+    foreignKeyName: z.literal('reports_reporter_id_fkey'),
+    columns: z.tuple([z.literal('reporter_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("reports_reporter_id_fkey"),
-    columns: z.tuple([z.literal("reporter_id")]),
+    foreignKeyName: z.literal('reports_reporter_id_fkey'),
+    columns: z.tuple([z.literal('reporter_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("reports_review_id_fkey"),
-    columns: z.tuple([z.literal("review_id")]),
+    foreignKeyName: z.literal('reports_review_id_fkey'),
+    columns: z.tuple([z.literal('review_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("reviews"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('reviews'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -984,32 +952,32 @@ export const publicReviewsUpdateSchema = z.object({
 
 export const publicReviewsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("reviews_parent_review_id_fkey"),
-    columns: z.tuple([z.literal("parent_review_id")]),
+    foreignKeyName: z.literal('reviews_parent_review_id_fkey'),
+    columns: z.tuple([z.literal('parent_review_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("reviews"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('reviews'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("reviews_recipe_id_fkey"),
-    columns: z.tuple([z.literal("recipe_id")]),
+    foreignKeyName: z.literal('reviews_recipe_id_fkey'),
+    columns: z.tuple([z.literal('recipe_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("recipes"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('recipes'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("reviews_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('reviews_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("reviews_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('reviews_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -1078,25 +1046,25 @@ export const publicSupportTicketMessagesUpdateSchema = z.object({
 
 export const publicSupportTicketMessagesRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("support_ticket_messages_sender_id_fkey"),
-    columns: z.tuple([z.literal("sender_id")]),
+    foreignKeyName: z.literal('support_ticket_messages_sender_id_fkey'),
+    columns: z.tuple([z.literal('sender_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("support_ticket_messages_sender_id_fkey"),
-    columns: z.tuple([z.literal("sender_id")]),
+    foreignKeyName: z.literal('support_ticket_messages_sender_id_fkey'),
+    columns: z.tuple([z.literal('sender_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("support_ticket_messages_ticket_id_fkey"),
-    columns: z.tuple([z.literal("ticket_id")]),
+    foreignKeyName: z.literal('support_ticket_messages_ticket_id_fkey'),
+    columns: z.tuple([z.literal('ticket_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("support_tickets"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('support_tickets'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -1141,32 +1109,32 @@ export const publicSupportTicketsUpdateSchema = z.object({
 
 export const publicSupportTicketsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("support_tickets_assignee_id_fkey"),
-    columns: z.tuple([z.literal("assignee_id")]),
+    foreignKeyName: z.literal('support_tickets_assignee_id_fkey'),
+    columns: z.tuple([z.literal('assignee_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("support_tickets_assignee_id_fkey"),
-    columns: z.tuple([z.literal("assignee_id")]),
+    foreignKeyName: z.literal('support_tickets_assignee_id_fkey'),
+    columns: z.tuple([z.literal('assignee_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("support_tickets_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('support_tickets_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("support_tickets_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('support_tickets_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -1208,25 +1176,25 @@ export const publicTokenTransactionsUpdateSchema = z.object({
 
 export const publicTokenTransactionsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("token_transactions_related_usage_id_fkey"),
-    columns: z.tuple([z.literal("related_usage_id")]),
+    foreignKeyName: z.literal('token_transactions_related_usage_id_fkey'),
+    columns: z.tuple([z.literal('related_usage_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("ai_usage_log"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('ai_usage_log'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("token_transactions_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('token_transactions_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("token_transactions_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('token_transactions_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -1289,18 +1257,18 @@ export const publicUserBackupsUpdateSchema = z.object({
 
 export const publicUserBackupsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("user_backups_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('user_backups_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(true),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("user_backups_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('user_backups_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(true),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -1342,25 +1310,25 @@ export const publicUserSubscriptionsUpdateSchema = z.object({
 
 export const publicUserSubscriptionsRelationshipsSchema = z.tuple([
   z.object({
-    foreignKeyName: z.literal("user_subscriptions_plan_id_fkey"),
-    columns: z.tuple([z.literal("plan_id")]),
+    foreignKeyName: z.literal('user_subscriptions_plan_id_fkey'),
+    columns: z.tuple([z.literal('plan_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("subscription_plans"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('subscription_plans'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("user_subscriptions_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('user_subscriptions_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("profiles"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('profiles'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
   z.object({
-    foreignKeyName: z.literal("user_subscriptions_user_id_fkey"),
-    columns: z.tuple([z.literal("user_id")]),
+    foreignKeyName: z.literal('user_subscriptions_user_id_fkey'),
+    columns: z.tuple([z.literal('user_id')]),
     isOneToOne: z.literal(false),
-    referencedRelation: z.literal("public_profile_info"),
-    referencedColumns: z.tuple([z.literal("id")]),
+    referencedRelation: z.literal('public_profile_info'),
+    referencedColumns: z.tuple([z.literal('id')]),
   }),
 ]);
 
@@ -1543,9 +1511,7 @@ export type PublicCookingMethod = z.infer<typeof publicCookingMethodSchema>;
 export type PublicDietaryTag = z.infer<typeof publicDietaryTagSchema>;
 export type PublicDifficulty = z.infer<typeof publicDifficultySchema>;
 export type PublicFoodCategory = z.infer<typeof publicFoodCategorySchema>;
-export type PublicModerationStatus = z.infer<
-  typeof publicModerationStatusSchema
->;
+export type PublicModerationStatus = z.infer<typeof publicModerationStatusSchema>;
 export type PublicNutritionSource = z.infer<typeof publicNutritionSourceSchema>;
 export type PublicOrderStatus = z.infer<typeof publicOrderStatusSchema>;
 export type PublicRecipeCategory = z.infer<typeof publicRecipeCategorySchema>;
@@ -1553,17 +1519,11 @@ export type PublicRecipeOrigin = z.infer<typeof publicRecipeOriginSchema>;
 export type PublicReportStatus = z.infer<typeof publicReportStatusSchema>;
 export type PublicSeverity = z.infer<typeof publicSeveritySchema>;
 export type PublicSpiceLevel = z.infer<typeof publicSpiceLevelSchema>;
-export type PublicSubscriptionStatus = z.infer<
-  typeof publicSubscriptionStatusSchema
->;
-export type PublicSubscriptionTier = z.infer<
-  typeof publicSubscriptionTierSchema
->;
+export type PublicSubscriptionStatus = z.infer<typeof publicSubscriptionStatusSchema>;
+export type PublicSubscriptionTier = z.infer<typeof publicSubscriptionTierSchema>;
 export type PublicSupportStatus = z.infer<typeof publicSupportStatusSchema>;
 export type PublicTicketCategory = z.infer<typeof publicTicketCategorySchema>;
-export type PublicTokenTransactionType = z.infer<
-  typeof publicTokenTransactionTypeSchema
->;
+export type PublicTokenTransactionType = z.infer<typeof publicTokenTransactionTypeSchema>;
 export type PublicUnitDimension = z.infer<typeof publicUnitDimensionSchema>;
 export type PublicUnitPreference = z.infer<typeof publicUnitPreferenceSchema>;
 export type Json = z.infer<typeof jsonSchema>;
@@ -1572,329 +1532,131 @@ export type PublicAiModelsRow = z.infer<typeof publicAiModelsRowSchema>;
 export type PublicAiModelsInsert = z.infer<typeof publicAiModelsInsertSchema>;
 export type PublicAiModelsUpdate = z.infer<typeof publicAiModelsUpdateSchema>;
 export type PublicAiUsageLogRow = z.infer<typeof publicAiUsageLogRowSchema>;
-export type PublicAiUsageLogInsert = z.infer<
-  typeof publicAiUsageLogInsertSchema
->;
-export type PublicAiUsageLogUpdate = z.infer<
-  typeof publicAiUsageLogUpdateSchema
->;
-export type PublicAiUsageLogRelationships = z.infer<
-  typeof publicAiUsageLogRelationshipsSchema
->;
-export type PublicCollectionRecipesRow = z.infer<
-  typeof publicCollectionRecipesRowSchema
->;
-export type PublicCollectionRecipesInsert = z.infer<
-  typeof publicCollectionRecipesInsertSchema
->;
-export type PublicCollectionRecipesUpdate = z.infer<
-  typeof publicCollectionRecipesUpdateSchema
->;
-export type PublicCollectionRecipesRelationships = z.infer<
-  typeof publicCollectionRecipesRelationshipsSchema
->;
+export type PublicAiUsageLogInsert = z.infer<typeof publicAiUsageLogInsertSchema>;
+export type PublicAiUsageLogUpdate = z.infer<typeof publicAiUsageLogUpdateSchema>;
+export type PublicAiUsageLogRelationships = z.infer<typeof publicAiUsageLogRelationshipsSchema>;
+export type PublicCollectionRecipesRow = z.infer<typeof publicCollectionRecipesRowSchema>;
+export type PublicCollectionRecipesInsert = z.infer<typeof publicCollectionRecipesInsertSchema>;
+export type PublicCollectionRecipesUpdate = z.infer<typeof publicCollectionRecipesUpdateSchema>;
+export type PublicCollectionRecipesRelationships = z.infer<typeof publicCollectionRecipesRelationshipsSchema>;
 export type PublicCollectionsRow = z.infer<typeof publicCollectionsRowSchema>;
-export type PublicCollectionsInsert = z.infer<
-  typeof publicCollectionsInsertSchema
->;
-export type PublicCollectionsUpdate = z.infer<
-  typeof publicCollectionsUpdateSchema
->;
-export type PublicCollectionsRelationships = z.infer<
-  typeof publicCollectionsRelationshipsSchema
->;
+export type PublicCollectionsInsert = z.infer<typeof publicCollectionsInsertSchema>;
+export type PublicCollectionsUpdate = z.infer<typeof publicCollectionsUpdateSchema>;
+export type PublicCollectionsRelationships = z.infer<typeof publicCollectionsRelationshipsSchema>;
 export type PublicCuisinesRow = z.infer<typeof publicCuisinesRowSchema>;
 export type PublicCuisinesInsert = z.infer<typeof publicCuisinesInsertSchema>;
 export type PublicCuisinesUpdate = z.infer<typeof publicCuisinesUpdateSchema>;
 export type PublicFavoritesRow = z.infer<typeof publicFavoritesRowSchema>;
 export type PublicFavoritesInsert = z.infer<typeof publicFavoritesInsertSchema>;
 export type PublicFavoritesUpdate = z.infer<typeof publicFavoritesUpdateSchema>;
-export type PublicFavoritesRelationships = z.infer<
-  typeof publicFavoritesRelationshipsSchema
->;
+export type PublicFavoritesRelationships = z.infer<typeof publicFavoritesRelationshipsSchema>;
 export type PublicIngredientsRow = z.infer<typeof publicIngredientsRowSchema>;
-export type PublicIngredientsInsert = z.infer<
-  typeof publicIngredientsInsertSchema
->;
-export type PublicIngredientsUpdate = z.infer<
-  typeof publicIngredientsUpdateSchema
->;
-export type PublicOrderReceiptsRow = z.infer<
-  typeof publicOrderReceiptsRowSchema
->;
-export type PublicOrderReceiptsInsert = z.infer<
-  typeof publicOrderReceiptsInsertSchema
->;
-export type PublicOrderReceiptsUpdate = z.infer<
-  typeof publicOrderReceiptsUpdateSchema
->;
-export type PublicOrderReceiptsRelationships = z.infer<
-  typeof publicOrderReceiptsRelationshipsSchema
->;
+export type PublicIngredientsInsert = z.infer<typeof publicIngredientsInsertSchema>;
+export type PublicIngredientsUpdate = z.infer<typeof publicIngredientsUpdateSchema>;
+export type PublicOrderReceiptsRow = z.infer<typeof publicOrderReceiptsRowSchema>;
+export type PublicOrderReceiptsInsert = z.infer<typeof publicOrderReceiptsInsertSchema>;
+export type PublicOrderReceiptsUpdate = z.infer<typeof publicOrderReceiptsUpdateSchema>;
+export type PublicOrderReceiptsRelationships = z.infer<typeof publicOrderReceiptsRelationshipsSchema>;
 export type PublicProfilesRow = z.infer<typeof publicProfilesRowSchema>;
 export type PublicProfilesInsert = z.infer<typeof publicProfilesInsertSchema>;
 export type PublicProfilesUpdate = z.infer<typeof publicProfilesUpdateSchema>;
-export type PublicProfilesRelationships = z.infer<
-  typeof publicProfilesRelationshipsSchema
->;
-export type PublicRecipeIngredientsRow = z.infer<
-  typeof publicRecipeIngredientsRowSchema
->;
-export type PublicRecipeIngredientsInsert = z.infer<
-  typeof publicRecipeIngredientsInsertSchema
->;
-export type PublicRecipeIngredientsUpdate = z.infer<
-  typeof publicRecipeIngredientsUpdateSchema
->;
-export type PublicRecipeIngredientsRelationships = z.infer<
-  typeof publicRecipeIngredientsRelationshipsSchema
->;
-export type PublicRecipeNutritionRow = z.infer<
-  typeof publicRecipeNutritionRowSchema
->;
-export type PublicRecipeNutritionInsert = z.infer<
-  typeof publicRecipeNutritionInsertSchema
->;
-export type PublicRecipeNutritionUpdate = z.infer<
-  typeof publicRecipeNutritionUpdateSchema
->;
-export type PublicRecipeNutritionRelationships = z.infer<
-  typeof publicRecipeNutritionRelationshipsSchema
->;
-export type PublicRecipeRevisionsRow = z.infer<
-  typeof publicRecipeRevisionsRowSchema
->;
-export type PublicRecipeRevisionsInsert = z.infer<
-  typeof publicRecipeRevisionsInsertSchema
->;
-export type PublicRecipeRevisionsUpdate = z.infer<
-  typeof publicRecipeRevisionsUpdateSchema
->;
-export type PublicRecipeRevisionsRelationships = z.infer<
-  typeof publicRecipeRevisionsRelationshipsSchema
->;
+export type PublicProfilesRelationships = z.infer<typeof publicProfilesRelationshipsSchema>;
+export type PublicRecipeIngredientsRow = z.infer<typeof publicRecipeIngredientsRowSchema>;
+export type PublicRecipeIngredientsInsert = z.infer<typeof publicRecipeIngredientsInsertSchema>;
+export type PublicRecipeIngredientsUpdate = z.infer<typeof publicRecipeIngredientsUpdateSchema>;
+export type PublicRecipeIngredientsRelationships = z.infer<typeof publicRecipeIngredientsRelationshipsSchema>;
+export type PublicRecipeNutritionRow = z.infer<typeof publicRecipeNutritionRowSchema>;
+export type PublicRecipeNutritionInsert = z.infer<typeof publicRecipeNutritionInsertSchema>;
+export type PublicRecipeNutritionUpdate = z.infer<typeof publicRecipeNutritionUpdateSchema>;
+export type PublicRecipeNutritionRelationships = z.infer<typeof publicRecipeNutritionRelationshipsSchema>;
+export type PublicRecipeRevisionsRow = z.infer<typeof publicRecipeRevisionsRowSchema>;
+export type PublicRecipeRevisionsInsert = z.infer<typeof publicRecipeRevisionsInsertSchema>;
+export type PublicRecipeRevisionsUpdate = z.infer<typeof publicRecipeRevisionsUpdateSchema>;
+export type PublicRecipeRevisionsRelationships = z.infer<typeof publicRecipeRevisionsRelationshipsSchema>;
 export type PublicRecipeStepsRow = z.infer<typeof publicRecipeStepsRowSchema>;
-export type PublicRecipeStepsInsert = z.infer<
-  typeof publicRecipeStepsInsertSchema
->;
-export type PublicRecipeStepsUpdate = z.infer<
-  typeof publicRecipeStepsUpdateSchema
->;
-export type PublicRecipeStepsRelationships = z.infer<
-  typeof publicRecipeStepsRelationshipsSchema
->;
+export type PublicRecipeStepsInsert = z.infer<typeof publicRecipeStepsInsertSchema>;
+export type PublicRecipeStepsUpdate = z.infer<typeof publicRecipeStepsUpdateSchema>;
+export type PublicRecipeStepsRelationships = z.infer<typeof publicRecipeStepsRelationshipsSchema>;
 export type PublicRecipesRow = z.infer<typeof publicRecipesRowSchema>;
 export type PublicRecipesInsert = z.infer<typeof publicRecipesInsertSchema>;
 export type PublicRecipesUpdate = z.infer<typeof publicRecipesUpdateSchema>;
-export type PublicRecipesRelationships = z.infer<
-  typeof publicRecipesRelationshipsSchema
->;
+export type PublicRecipesRelationships = z.infer<typeof publicRecipesRelationshipsSchema>;
 export type PublicReportsRow = z.infer<typeof publicReportsRowSchema>;
 export type PublicReportsInsert = z.infer<typeof publicReportsInsertSchema>;
 export type PublicReportsUpdate = z.infer<typeof publicReportsUpdateSchema>;
-export type PublicReportsRelationships = z.infer<
-  typeof publicReportsRelationshipsSchema
->;
+export type PublicReportsRelationships = z.infer<typeof publicReportsRelationshipsSchema>;
 export type PublicReviewsRow = z.infer<typeof publicReviewsRowSchema>;
 export type PublicReviewsInsert = z.infer<typeof publicReviewsInsertSchema>;
 export type PublicReviewsUpdate = z.infer<typeof publicReviewsUpdateSchema>;
-export type PublicReviewsRelationships = z.infer<
-  typeof publicReviewsRelationshipsSchema
->;
-export type PublicSubscriptionPlansRow = z.infer<
-  typeof publicSubscriptionPlansRowSchema
->;
-export type PublicSubscriptionPlansInsert = z.infer<
-  typeof publicSubscriptionPlansInsertSchema
->;
-export type PublicSubscriptionPlansUpdate = z.infer<
-  typeof publicSubscriptionPlansUpdateSchema
->;
-export type PublicSupportTicketMessagesRow = z.infer<
-  typeof publicSupportTicketMessagesRowSchema
->;
-export type PublicSupportTicketMessagesInsert = z.infer<
-  typeof publicSupportTicketMessagesInsertSchema
->;
-export type PublicSupportTicketMessagesUpdate = z.infer<
-  typeof publicSupportTicketMessagesUpdateSchema
->;
-export type PublicSupportTicketMessagesRelationships = z.infer<
-  typeof publicSupportTicketMessagesRelationshipsSchema
->;
-export type PublicSupportTicketsRow = z.infer<
-  typeof publicSupportTicketsRowSchema
->;
-export type PublicSupportTicketsInsert = z.infer<
-  typeof publicSupportTicketsInsertSchema
->;
-export type PublicSupportTicketsUpdate = z.infer<
-  typeof publicSupportTicketsUpdateSchema
->;
-export type PublicSupportTicketsRelationships = z.infer<
-  typeof publicSupportTicketsRelationshipsSchema
->;
-export type PublicTokenTransactionsRow = z.infer<
-  typeof publicTokenTransactionsRowSchema
->;
-export type PublicTokenTransactionsInsert = z.infer<
-  typeof publicTokenTransactionsInsertSchema
->;
-export type PublicTokenTransactionsUpdate = z.infer<
-  typeof publicTokenTransactionsUpdateSchema
->;
-export type PublicTokenTransactionsRelationships = z.infer<
-  typeof publicTokenTransactionsRelationshipsSchema
->;
+export type PublicReviewsRelationships = z.infer<typeof publicReviewsRelationshipsSchema>;
+export type PublicSubscriptionPlansRow = z.infer<typeof publicSubscriptionPlansRowSchema>;
+export type PublicSubscriptionPlansInsert = z.infer<typeof publicSubscriptionPlansInsertSchema>;
+export type PublicSubscriptionPlansUpdate = z.infer<typeof publicSubscriptionPlansUpdateSchema>;
+export type PublicSupportTicketMessagesRow = z.infer<typeof publicSupportTicketMessagesRowSchema>;
+export type PublicSupportTicketMessagesInsert = z.infer<typeof publicSupportTicketMessagesInsertSchema>;
+export type PublicSupportTicketMessagesUpdate = z.infer<typeof publicSupportTicketMessagesUpdateSchema>;
+export type PublicSupportTicketMessagesRelationships = z.infer<typeof publicSupportTicketMessagesRelationshipsSchema>;
+export type PublicSupportTicketsRow = z.infer<typeof publicSupportTicketsRowSchema>;
+export type PublicSupportTicketsInsert = z.infer<typeof publicSupportTicketsInsertSchema>;
+export type PublicSupportTicketsUpdate = z.infer<typeof publicSupportTicketsUpdateSchema>;
+export type PublicSupportTicketsRelationships = z.infer<typeof publicSupportTicketsRelationshipsSchema>;
+export type PublicTokenTransactionsRow = z.infer<typeof publicTokenTransactionsRowSchema>;
+export type PublicTokenTransactionsInsert = z.infer<typeof publicTokenTransactionsInsertSchema>;
+export type PublicTokenTransactionsUpdate = z.infer<typeof publicTokenTransactionsUpdateSchema>;
+export type PublicTokenTransactionsRelationships = z.infer<typeof publicTokenTransactionsRelationshipsSchema>;
 export type PublicUnitsRow = z.infer<typeof publicUnitsRowSchema>;
 export type PublicUnitsInsert = z.infer<typeof publicUnitsInsertSchema>;
 export type PublicUnitsUpdate = z.infer<typeof publicUnitsUpdateSchema>;
 export type PublicUserBackupsRow = z.infer<typeof publicUserBackupsRowSchema>;
-export type PublicUserBackupsInsert = z.infer<
-  typeof publicUserBackupsInsertSchema
->;
-export type PublicUserBackupsUpdate = z.infer<
-  typeof publicUserBackupsUpdateSchema
->;
-export type PublicUserBackupsRelationships = z.infer<
-  typeof publicUserBackupsRelationshipsSchema
->;
-export type PublicUserSubscriptionsRow = z.infer<
-  typeof publicUserSubscriptionsRowSchema
->;
-export type PublicUserSubscriptionsInsert = z.infer<
-  typeof publicUserSubscriptionsInsertSchema
->;
-export type PublicUserSubscriptionsUpdate = z.infer<
-  typeof publicUserSubscriptionsUpdateSchema
->;
-export type PublicUserSubscriptionsRelationships = z.infer<
-  typeof publicUserSubscriptionsRelationshipsSchema
->;
-export type PublicAdminMetricsAiActionsDailyRow = z.infer<
-  typeof publicAdminMetricsAiActionsDailyRowSchema
->;
-export type PublicAdminMetricsDailySignupsRow = z.infer<
-  typeof publicAdminMetricsDailySignupsRowSchema
->;
-export type PublicAdminMetricsModerationQueueRow = z.infer<
-  typeof publicAdminMetricsModerationQueueRowSchema
->;
-export type PublicAdminMetricsModeratorWorkloadRow = z.infer<
-  typeof publicAdminMetricsModeratorWorkloadRowSchema
->;
-export type PublicAdminMetricsRecipeOriginBreakdownRow = z.infer<
-  typeof publicAdminMetricsRecipeOriginBreakdownRowSchema
->;
-export type PublicAdminMetricsTokenConsumptionDailyRow = z.infer<
-  typeof publicAdminMetricsTokenConsumptionDailyRowSchema
->;
-export type PublicPublicProfileInfoRow = z.infer<
-  typeof publicPublicProfileInfoRowSchema
->;
-export type PublicPublicProfileInfoInsert = z.infer<
-  typeof publicPublicProfileInfoInsertSchema
->;
-export type PublicPublicProfileInfoUpdate = z.infer<
-  typeof publicPublicProfileInfoUpdateSchema
->;
-export type PublicAdminSetCuisineActiveArgs = z.infer<
-  typeof publicAdminSetCuisineActiveArgsSchema
->;
-export type PublicAdminSetCuisineActiveReturns = z.infer<
-  typeof publicAdminSetCuisineActiveReturnsSchema
->;
-export type PublicAdminUpsertCuisineArgs = z.infer<
-  typeof publicAdminUpsertCuisineArgsSchema
->;
-export type PublicAdminUpsertCuisineReturns = z.infer<
-  typeof publicAdminUpsertCuisineReturnsSchema
->;
-export type PublicApplyTokenTransactionArgs = z.infer<
-  typeof publicApplyTokenTransactionArgsSchema
->;
-export type PublicApplyTokenTransactionReturns = z.infer<
-  typeof publicApplyTokenTransactionReturnsSchema
->;
-export type PublicCanEditRecipeArgs = z.infer<
-  typeof publicCanEditRecipeArgsSchema
->;
-export type PublicCanEditRecipeReturns = z.infer<
-  typeof publicCanEditRecipeReturnsSchema
->;
-export type PublicCanPostReviewArgs = z.infer<
-  typeof publicCanPostReviewArgsSchema
->;
-export type PublicCanPostReviewReturns = z.infer<
-  typeof publicCanPostReviewReturnsSchema
->;
-export type PublicCollectionIsReadableArgs = z.infer<
-  typeof publicCollectionIsReadableArgsSchema
->;
-export type PublicCollectionIsReadableReturns = z.infer<
-  typeof publicCollectionIsReadableReturnsSchema
->;
-export type PublicCompleteAiUsageArgs = z.infer<
-  typeof publicCompleteAiUsageArgsSchema
->;
-export type PublicCompleteAiUsageReturns = z.infer<
-  typeof publicCompleteAiUsageReturnsSchema
->;
-export type PublicDeleteSupportTicketArgs = z.infer<
-  typeof publicDeleteSupportTicketArgsSchema
->;
-export type PublicDeleteSupportTicketReturns = z.infer<
-  typeof publicDeleteSupportTicketReturnsSchema
->;
+export type PublicUserBackupsInsert = z.infer<typeof publicUserBackupsInsertSchema>;
+export type PublicUserBackupsUpdate = z.infer<typeof publicUserBackupsUpdateSchema>;
+export type PublicUserBackupsRelationships = z.infer<typeof publicUserBackupsRelationshipsSchema>;
+export type PublicUserSubscriptionsRow = z.infer<typeof publicUserSubscriptionsRowSchema>;
+export type PublicUserSubscriptionsInsert = z.infer<typeof publicUserSubscriptionsInsertSchema>;
+export type PublicUserSubscriptionsUpdate = z.infer<typeof publicUserSubscriptionsUpdateSchema>;
+export type PublicUserSubscriptionsRelationships = z.infer<typeof publicUserSubscriptionsRelationshipsSchema>;
+export type PublicAdminMetricsAiActionsDailyRow = z.infer<typeof publicAdminMetricsAiActionsDailyRowSchema>;
+export type PublicAdminMetricsDailySignupsRow = z.infer<typeof publicAdminMetricsDailySignupsRowSchema>;
+export type PublicAdminMetricsModerationQueueRow = z.infer<typeof publicAdminMetricsModerationQueueRowSchema>;
+export type PublicAdminMetricsModeratorWorkloadRow = z.infer<typeof publicAdminMetricsModeratorWorkloadRowSchema>;
+export type PublicAdminMetricsRecipeOriginBreakdownRow = z.infer<typeof publicAdminMetricsRecipeOriginBreakdownRowSchema>;
+export type PublicAdminMetricsTokenConsumptionDailyRow = z.infer<typeof publicAdminMetricsTokenConsumptionDailyRowSchema>;
+export type PublicPublicProfileInfoRow = z.infer<typeof publicPublicProfileInfoRowSchema>;
+export type PublicPublicProfileInfoInsert = z.infer<typeof publicPublicProfileInfoInsertSchema>;
+export type PublicPublicProfileInfoUpdate = z.infer<typeof publicPublicProfileInfoUpdateSchema>;
+export type PublicAdminSetCuisineActiveArgs = z.infer<typeof publicAdminSetCuisineActiveArgsSchema>;
+export type PublicAdminSetCuisineActiveReturns = z.infer<typeof publicAdminSetCuisineActiveReturnsSchema>;
+export type PublicAdminUpsertCuisineArgs = z.infer<typeof publicAdminUpsertCuisineArgsSchema>;
+export type PublicAdminUpsertCuisineReturns = z.infer<typeof publicAdminUpsertCuisineReturnsSchema>;
+export type PublicApplyTokenTransactionArgs = z.infer<typeof publicApplyTokenTransactionArgsSchema>;
+export type PublicApplyTokenTransactionReturns = z.infer<typeof publicApplyTokenTransactionReturnsSchema>;
+export type PublicCanEditRecipeArgs = z.infer<typeof publicCanEditRecipeArgsSchema>;
+export type PublicCanEditRecipeReturns = z.infer<typeof publicCanEditRecipeReturnsSchema>;
+export type PublicCanPostReviewArgs = z.infer<typeof publicCanPostReviewArgsSchema>;
+export type PublicCanPostReviewReturns = z.infer<typeof publicCanPostReviewReturnsSchema>;
+export type PublicCollectionIsReadableArgs = z.infer<typeof publicCollectionIsReadableArgsSchema>;
+export type PublicCollectionIsReadableReturns = z.infer<typeof publicCollectionIsReadableReturnsSchema>;
+export type PublicCompleteAiUsageArgs = z.infer<typeof publicCompleteAiUsageArgsSchema>;
+export type PublicCompleteAiUsageReturns = z.infer<typeof publicCompleteAiUsageReturnsSchema>;
+export type PublicDeleteSupportTicketArgs = z.infer<typeof publicDeleteSupportTicketArgsSchema>;
+export type PublicDeleteSupportTicketReturns = z.infer<typeof publicDeleteSupportTicketReturnsSchema>;
 export type PublicIsAdminArgs = z.infer<typeof publicIsAdminArgsSchema>;
 export type PublicIsAdminReturns = z.infer<typeof publicIsAdminReturnsSchema>;
 export type PublicIsStaffArgs = z.infer<typeof publicIsStaffArgsSchema>;
 export type PublicIsStaffReturns = z.infer<typeof publicIsStaffReturnsSchema>;
-export type PublicOwnsCollectionArgs = z.infer<
-  typeof publicOwnsCollectionArgsSchema
->;
-export type PublicOwnsCollectionReturns = z.infer<
-  typeof publicOwnsCollectionReturnsSchema
->;
-export type PublicRecipeIsPubliclyVisibleArgs = z.infer<
-  typeof publicRecipeIsPubliclyVisibleArgsSchema
->;
-export type PublicRecipeIsPubliclyVisibleReturns = z.infer<
-  typeof publicRecipeIsPubliclyVisibleReturnsSchema
->;
-export type PublicReserveAiUsageArgs = z.infer<
-  typeof publicReserveAiUsageArgsSchema
->;
-export type PublicReserveAiUsageReturns = z.infer<
-  typeof publicReserveAiUsageReturnsSchema
->;
-export type PublicSetRecipeModerationArgs = z.infer<
-  typeof publicSetRecipeModerationArgsSchema
->;
-export type PublicSetRecipeModerationReturns = z.infer<
-  typeof publicSetRecipeModerationReturnsSchema
->;
-export type PublicSetReportStatusArgs = z.infer<
-  typeof publicSetReportStatusArgsSchema
->;
-export type PublicSetReportStatusReturns = z.infer<
-  typeof publicSetReportStatusReturnsSchema
->;
-export type PublicSetRevisionStatusArgs = z.infer<
-  typeof publicSetRevisionStatusArgsSchema
->;
-export type PublicSetRevisionStatusReturns = z.infer<
-  typeof publicSetRevisionStatusReturnsSchema
->;
-export type PublicSweepAbandonedAiUsageArgs = z.infer<
-  typeof publicSweepAbandonedAiUsageArgsSchema
->;
-export type PublicSweepAbandonedAiUsageReturns = z.infer<
-  typeof publicSweepAbandonedAiUsageReturnsSchema
->;
-export type PublicUpdateSupportTicketArgs = z.infer<
-  typeof publicUpdateSupportTicketArgsSchema
->;
-export type PublicUpdateSupportTicketReturns = z.infer<
-  typeof publicUpdateSupportTicketReturnsSchema
->;
+export type PublicOwnsCollectionArgs = z.infer<typeof publicOwnsCollectionArgsSchema>;
+export type PublicOwnsCollectionReturns = z.infer<typeof publicOwnsCollectionReturnsSchema>;
+export type PublicRecipeIsPubliclyVisibleArgs = z.infer<typeof publicRecipeIsPubliclyVisibleArgsSchema>;
+export type PublicRecipeIsPubliclyVisibleReturns = z.infer<typeof publicRecipeIsPubliclyVisibleReturnsSchema>;
+export type PublicReserveAiUsageArgs = z.infer<typeof publicReserveAiUsageArgsSchema>;
+export type PublicReserveAiUsageReturns = z.infer<typeof publicReserveAiUsageReturnsSchema>;
+export type PublicSetRecipeModerationArgs = z.infer<typeof publicSetRecipeModerationArgsSchema>;
+export type PublicSetRecipeModerationReturns = z.infer<typeof publicSetRecipeModerationReturnsSchema>;
+export type PublicSetReportStatusArgs = z.infer<typeof publicSetReportStatusArgsSchema>;
+export type PublicSetReportStatusReturns = z.infer<typeof publicSetReportStatusReturnsSchema>;
+export type PublicSetRevisionStatusArgs = z.infer<typeof publicSetRevisionStatusArgsSchema>;
+export type PublicSetRevisionStatusReturns = z.infer<typeof publicSetRevisionStatusReturnsSchema>;
+export type PublicSweepAbandonedAiUsageArgs = z.infer<typeof publicSweepAbandonedAiUsageArgsSchema>;
+export type PublicSweepAbandonedAiUsageReturns = z.infer<typeof publicSweepAbandonedAiUsageReturnsSchema>;
+export type PublicUpdateSupportTicketArgs = z.infer<typeof publicUpdateSupportTicketArgsSchema>;
+export type PublicUpdateSupportTicketReturns = z.infer<typeof publicUpdateSupportTicketReturnsSchema>;

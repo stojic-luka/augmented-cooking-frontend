@@ -492,10 +492,10 @@ export function RecipeDetailView({ recipe, averageRating, reviewCount }: Readonl
                 {analysis ? (
                   <Stack gap="sm">
                     <SimpleGrid cols={{ base: 2, sm: 4 }}>
-                      <AnalysisStat label="Calories" value={analysis.caloriesPerServing} unit="kcal" />
-                      <AnalysisStat label="Protein" value={analysis.proteinGrams} unit="g" />
-                      <AnalysisStat label="Carbs" value={analysis.carbsGrams} unit="g" />
-                      <AnalysisStat label="Fat" value={analysis.fatGrams} unit="g" />
+                      <AnalysisStat label="Calories" value={analysis.caloriesPerServing || 0} unit="kcal" />
+                      <AnalysisStat label="Protein" value={analysis.proteinGrams || 0} unit="g" />
+                      <AnalysisStat label="Carbs" value={analysis.carbsGrams || 0} unit="g" />
+                      <AnalysisStat label="Fat" value={analysis.fatGrams || 0} unit="g" />
                     </SimpleGrid>
                     {analysis.suggestions.length > 0 ? (
                       <List spacing="xs" size="sm">
