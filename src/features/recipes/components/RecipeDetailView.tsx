@@ -154,6 +154,7 @@ export function RecipeDetailView({ recipe, averageRating, reviewCount }: Readonl
   };
 
   const analysis = analyzeNutrition.data;
+  console.log(analysis);
 
   return (
     <Stack gap="xl">
@@ -491,10 +492,10 @@ export function RecipeDetailView({ recipe, averageRating, reviewCount }: Readonl
                 {analysis ? (
                   <Stack gap="sm">
                     <SimpleGrid cols={{ base: 2, sm: 4 }}>
-                      <AnalysisStat label="Calories" value={analysis.calories_per_serving} unit="kcal" />
-                      <AnalysisStat label="Protein" value={analysis.protein_grams} unit="g" />
-                      <AnalysisStat label="Carbs" value={analysis.carbs_grams} unit="g" />
-                      <AnalysisStat label="Fat" value={analysis.fat_grams} unit="g" />
+                      <AnalysisStat label="Calories" value={analysis.caloriesPerServing} unit="kcal" />
+                      <AnalysisStat label="Protein" value={analysis.proteinGrams} unit="g" />
+                      <AnalysisStat label="Carbs" value={analysis.carbsGrams} unit="g" />
+                      <AnalysisStat label="Fat" value={analysis.fatGrams} unit="g" />
                     </SimpleGrid>
                     {analysis.suggestions.length > 0 ? (
                       <List spacing="xs" size="sm">

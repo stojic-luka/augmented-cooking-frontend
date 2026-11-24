@@ -1,19 +1,26 @@
+import { z } from 'zod';
 import { api } from '@/api';
 import { AI_API_ROUTES } from '../api';
 import { aiRecipeDraftSchema, generateRecipeRequestSchema, type AiRecipeDraft, type GenerateRecipeRequest } from '../types';
-import { z } from 'zod';
-import { publicRecipeNutritionRowSchema } from '@/types/schemas';
-import type { PublicRecipeNutritionRow } from '@/types/schemas';
+import { publicNutritionSourceSchema } from '@/types/schemas';
 
 const generateResponseSchema = z.object({ recipe: aiRecipeDraftSchema });
 const editResponseSchema = z.object({ recipe: aiRecipeDraftSchema, summary: z.string().catch('') });
 
-/** Nutrition analysis result: the DB row plus the model's improvement suggestions. */
-export type AnalyzedNutrition = PublicRecipeNutritionRow & { suggestions: string[] };
-
-const analyzeResponseSchema = publicRecipeNutritionRowSchema.extend({
-  suggestions: z.array(z.string()).catch([]),
+export const analyzedNutritionSchema = z.object({
+  recipeId: z.string().optional(),
+  computedAt: z.string().optional(),
+  caloriesPerServing: z.number().optional(),
+  proteinGrams: z.number().optional(),
+  carbsGrams: z.number().optional(),
+  fatGrams: z.number().optional(),
+  fiberGrams: z.number().optional(),
+  sugarGrams: z.number().optional(),
+  sodiumMg: z.number().optional(),
+  nutritionSource: publicNutritionSourceSchema.optional(),
+  suggestions: z.array(z.string()),
 });
+export type AnalyzedNutrition = z.infer<typeof analyzedNutritionSchema>;
 
 export async function generateRecipe(request: GenerateRecipeRequest): Promise<AiRecipeDraft> {
   const payload = generateRecipeRequestSchema.parse(request);
@@ -32,5 +39,6 @@ export async function editRecipe(
 
 export async function analyzeNutrition(recipe: AiRecipeDraft): Promise<AnalyzedNutrition> {
   const response = await api.post<unknown>(AI_API_ROUTES.analyzeNutrition, { recipe });
-  return analyzeResponseSchema.parse(response.data);
+  console.log(response.data);
+  return analyzedNutritionSchema.parse(response.data);
 }
