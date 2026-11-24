@@ -5,6 +5,7 @@ import {
   LuBookOpen,
   LuCalendarDays,
   LuChefHat,
+  LuCloudUpload,
   LuFolders,
   LuHeart,
   LuLifeBuoy,
@@ -24,6 +25,7 @@ import { RECIPES_SEARCH_PATH } from '@features/recipes';
 const NAV_ITEMS = [
   { label: 'Explore recipes', icon: LuBookOpen, href: RECIPES_SEARCH_PATH },
   { label: 'My recipes', icon: LuChefHat, href: '/my-recipes' },
+  { label: 'Import recipe', icon: LuCloudUpload, href: '/recipes/import' },
   { label: 'Favorites', icon: LuHeart, href: '/favorites' },
   { label: 'Collections', icon: LuFolders, href: '/collections' },
   { label: 'AI assistant', icon: LuBot, href: '/ai-assistant' },

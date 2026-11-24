@@ -41,6 +41,7 @@ describe('protected sidebar dashboard entries', () => {
     renderAppRoutes('/recipes/search');
 
     expect(await screen.findByRole('link', { name: 'My recipes' }, { timeout: 5000 })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Import recipe' })).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Admin dashboard' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Moderator dashboard' })).not.toBeInTheDocument();
   });
