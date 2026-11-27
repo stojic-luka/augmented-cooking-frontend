@@ -127,7 +127,6 @@ describe('admin services', () => {
     seed('recipes', [dbRecipe()]);
     const page = await fetchAllRecipes(null);
     expect(page.data[0].author_name).toBe('Cook');
-    expect(page.data[0].recipe_steps).toHaveLength(1);
     expect(page.hasNextPage).toBe(false);
     expect(page.nextCursor).toBeNull();
   });

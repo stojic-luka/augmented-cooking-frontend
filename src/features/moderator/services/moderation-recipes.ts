@@ -27,7 +27,8 @@ export async function fetchPendingRecipes(): Promise<ModRecipe[]> {
     .in('moderation_status', ['pending', 'flagged'])
     .order('created_at', { ascending: true })
     .order('position', { referencedTable: 'recipe_ingredients', ascending: true })
-    .order('position', { referencedTable: 'recipe_steps', ascending: true });
+    .order('position', { referencedTable: 'recipe_steps', ascending: true })
+    .limit(100);
 
   if (error) {
     throw new Error(`Failed to fetch pending recipes: ${error.message}`);

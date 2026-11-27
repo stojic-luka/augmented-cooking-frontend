@@ -1,14 +1,7 @@
 import { z } from 'zod';
 import { getSupabaseBrowserClient } from '@lib/supabase';
-import {
-  fullRecipeSchema,
-  RECIPE_SELECT,
-  SORT_SPECS,
-  cursorSeekFilter,
-  decodeCursorForSort,
-  encodeRecipeCursor,
-} from '@features/recipes';
-import type { PublicModerationStatus as ModerationStatus } from '@/types/schemas';
+import { SORT_SPECS, cursorSeekFilter, decodeCursorForSort, encodeRecipeCursor } from '@features/recipes';
+import { publicRecipesRowSchema, type PublicModerationStatus as ModerationStatus } from '@/types/schemas';
 
 /**
  * Admin-facing recipe row: the full recipe (shared full-recipe select, see
@@ -20,14 +13,14 @@ import type { PublicModerationStatus as ModerationStatus } from '@/types/schemas
  * The view exposes (id, display_name, avatar_url) for exactly this purpose.
  * Nullable because `recipes.user_id` is nullable (anonymized recipes).
  */
-export const adminRecipeSchema = fullRecipeSchema.extend({ author_name: z.string().nullable() });
+export const adminRecipeSchema = publicRecipesRowSchema.extend({ author_name: z.string().nullable() });
 export type AdminRecipe = z.infer<typeof adminRecipeSchema>;
 
 /** Statuses a moderator can actively set (everything except 'pending'). */
 export type AdminModerationAction = Extract<ModerationStatus, 'approved' | 'rejected' | 'flagged'>;
 
 /** Rows per admin registry page; the +1 lookahead row answers hasNextPage. */
-export const ADMIN_RECIPES_PAGE_SIZE = 25;
+export const ADMIN_RECIPES_PAGE_SIZE = 50;
 
 /**
  * One keyset-paginated page of the admin recipe registry — the same
@@ -55,7 +48,7 @@ export async function fetchAllRecipes(cursor: string | null): Promise<AdminRecip
   // join silently returns null for every non-staff-own row because profiles
   // RLS restricts SELECT to the caller's own row. The `!user_id` hint pins
   // the embed to that FK.
-  let query = supabase.from('recipes').select(`${RECIPE_SELECT}, public_profile_info!user_id(display_name)`);
+  let query = supabase.from('recipes').select(`*, public_profile_info!user_id(display_name)`);
 
   // Keyset seek: rows strictly after the cursor in (created_at, id) order.
   if (payload) {
@@ -66,8 +59,6 @@ export async function fetchAllRecipes(cursor: string | null): Promise<AdminRecip
     .order(spec.column, { ascending: !spec.descending, nullsFirst: false })
     .order('id', { ascending: !spec.descending })
     // Full recipes always carry their children in a stable order.
-    .order('position', { referencedTable: 'recipe_ingredients', ascending: true })
-    .order('position', { referencedTable: 'recipe_steps', ascending: true })
     // +1 lookahead answers hasNextPage without a count; the exact-boundary
     // page (rows == pageSize) therefore reports hasNextPage: false.
     .limit(ADMIN_RECIPES_PAGE_SIZE + 1);

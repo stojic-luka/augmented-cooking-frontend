@@ -35,11 +35,7 @@ export function AdminRecipesPage() {
   const loadMore = () => void recipesQuery.fetchNextPage();
 
   const sentinelRef = useRef<HTMLDivElement>(null);
-  useAutoLoadMore(
-    sentinelRef,
-    loadMore,
-    recipesQuery.hasNextPage && !recipesQuery.isFetchingNextPage && !isLoadMoreError,
-  );
+  useAutoLoadMore(sentinelRef, loadMore, recipesQuery.hasNextPage && !recipesQuery.isFetchingNextPage && !isLoadMoreError);
 
   if (recipesQuery.isPending) {
     return (
