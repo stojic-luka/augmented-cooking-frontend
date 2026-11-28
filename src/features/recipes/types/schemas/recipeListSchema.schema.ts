@@ -36,7 +36,7 @@ export function recipeListFilters({ cursor: _cursor, ...filters }: RecipeFilterP
   return filters;
 }
 
-export const RECIPES_PAGE_SIZE = 12;
+export const RECIPES_PAGE_SIZE = 9;
 
 /**
  * Contract shape of every paginated list response: the page's rows plus the
