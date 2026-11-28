@@ -44,7 +44,16 @@ describe('ai services (axios contract)', () => {
         path = new URL(request.url).pathname;
         await request.json();
         return HttpResponse.json({
-          recipe: { title: 'D', description: '', cuisine: '', prepTimeMinutes: 1, cookTimeMinutes: null, servings: 2, ingredients: [], steps: [] },
+          recipe: {
+            title: 'D',
+            description: '',
+            cuisine: '',
+            prepTimeMinutes: 1,
+            cookTimeMinutes: null,
+            servings: 2,
+            ingredients: [],
+            steps: [],
+          },
         });
       }),
     );
@@ -100,8 +109,8 @@ describe('ai services (axios contract)', () => {
     );
 
     const nutritionRow = await analyzeNutrition(fullDraft({ title: 'X' }));
-    expect(nutritionRow.calories_per_serving).toBe(500);
-    expect(nutritionRow.nutrition_source).toBe('ai_estimated');
+    expect(nutritionRow.caloriesPerServing).toBe(500);
+    expect(nutritionRow.nutritionSource).toBe('ai_estimated');
     expect(nutritionRow.suggestions).toEqual(['Swap cream for Greek yogurt.']);
   });
 
@@ -199,7 +208,9 @@ describe('ai services (axios contract)', () => {
 
   it('surfaces the backend `{ message }` body as the rejected error message', async () => {
     server.use(
-      http.post(`${API_URL}/ai/generate-recipe`, () => HttpResponse.json({ message: 'Daily AI quota reached' }, { status: 402 })),
+      http.post(`${API_URL}/ai/generate-recipe`, () =>
+        HttpResponse.json({ message: 'Daily AI quota reached' }, { status: 402 }),
+      ),
     );
 
     await expect(generateRecipe({ ingredients: ['rice'] })).rejects.toThrow('Daily AI quota reached');
@@ -333,18 +344,14 @@ describe('streamChatMessage (SSE contract)', () => {
   });
 
   it('rejects with a status-code message when the error body has none', async () => {
-    server.use(
-      http.post(`${API_URL}/ai/chat/stream`, () => new HttpResponse('nope', { status: 500 })),
-    );
+    server.use(http.post(`${API_URL}/ai/chat/stream`, () => new HttpResponse('nope', { status: 500 })));
 
     await expect(callStream(() => {}, new AbortController().signal)).rejects.toThrow('status code 500');
   });
 
   it('supports cancellation via AbortController', async () => {
     server.use(
-      http.post(`${API_URL}/ai/chat/stream`, () =>
-        sseStreamResponse(['data: {"type":"meta","modelId":null}\n\n']),
-      ),
+      http.post(`${API_URL}/ai/chat/stream`, () => sseStreamResponse(['data: {"type":"meta","modelId":null}\n\n'])),
     );
 
     const controller = new AbortController();
